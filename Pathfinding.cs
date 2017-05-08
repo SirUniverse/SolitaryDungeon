@@ -63,6 +63,7 @@ namespace SolitaryDungeon
                 }
             }
 
+
             switch (dir)
             {
                 case 0: return Direction.Left;
