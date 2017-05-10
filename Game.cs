@@ -33,6 +33,12 @@ namespace SolitaryDungeon
             set { _isPaused = value; }
         }
 
+        public static bool IsWon
+        {
+            get { return _isWon; }
+            set { _isWon = value; }
+        }
+
         #endregion
 
         public static void Initialize()
@@ -40,6 +46,7 @@ namespace SolitaryDungeon
             Console.Title = "Solidary Dungeon";
             IsAlive = true;
             IsPaused = false;
+            IsWon = false;
             Console.CursorVisible = false;
             Console.WindowHeight = 31;
             Console.BufferHeight = 31;
@@ -54,7 +61,7 @@ namespace SolitaryDungeon
         #region Fields
 
         private static Level _currentLevel;
-        private static bool _isAlive, _isPaused;
+        private static bool _isAlive, _isPaused, _isWon;
 
         #endregion
     }

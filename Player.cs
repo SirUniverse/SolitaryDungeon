@@ -11,7 +11,7 @@ namespace SolitaryDungeon
         public Player(Level Level, int Xposition, int Yposition) : base(Level, Xposition, Yposition, ConsoleColor.White)
         {
             Sprite = '☻';
-            //Menu.ShowIntro();
+            Menu.ShowIntro();
             Camera.Render();
             InGameMenu.Update();
         }
@@ -30,7 +30,10 @@ namespace SolitaryDungeon
         {
             _health -= DamageValue;
             if (_health <= 0)
+            {
                 Game.IsAlive = false;
+                Game.IsWon = false;
+            }
         }
 
         protected override void ExecuteBehaviour()
@@ -74,6 +77,12 @@ namespace SolitaryDungeon
                                 else if (((Zombie)z).Health == 0)
                                     InGameMenu.Log("Killed a zombie");
                             }
+                        if (Level.Characters.Count == 1)
+                        {
+                            InGameMenu.Log("Killed all zombies");
+                            Game.IsAlive = false;
+                            Game.IsWon = true;
+                        }
                         goto default;
                     default:
                         Level.Update();

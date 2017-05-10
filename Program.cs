@@ -12,7 +12,8 @@ namespace SolitaryDungeon
         static void Main(string[] args)
         {
             Game.Initialize();
-            Level lvl1 = new Level(10, 10);
+
+            Level lvl1 = new Level(20, 20);
             Game.CurrentLevel = lvl1;
             Player p = new Player(lvl1, 3, 3);
             Zombie z = new Zombie(lvl1, 8, 8);
@@ -23,7 +24,10 @@ namespace SolitaryDungeon
                     Thread.Sleep(16);
                     p.Update();
                 }
-            Menu.ShowGameOver();
+            if (Game.IsWon)
+                Menu.ShowWin();
+            else
+                Menu.ShowGameOver();
         }
     }
 }

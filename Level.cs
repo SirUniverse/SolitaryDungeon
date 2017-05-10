@@ -10,6 +10,8 @@ namespace SolitaryDungeon
             _height = Height;
             InitializeMap();
             GenerateRoom(0, 0, Width, Height);
+            GenerateHorizontalHallway(5, 5, 5, true);
+            GenerateVerticalHallway(5, 7, 5, true);
             _characters = new List<Character>();
         }
 
@@ -66,6 +68,8 @@ namespace SolitaryDungeon
                     _map[i, j] = Tile.Empty();
         }
 
+        #region Generators
+
         private void GenerateRoom(int Xposition, int Yposition, int Width = 5, int Height = 5)
         {
             _map[Yposition, Xposition] = new Wall(Wall.Type.TopLeft);
@@ -83,6 +87,62 @@ namespace SolitaryDungeon
                 _map[Yposition + Height - 1, j] = new Wall(Wall.Type.Horizontal);
             }
         }
+
+        private void GenerateHorizontalHallway(int Xorigin, int Yorigin, int Length, bool HasDoors)
+        {
+            for (int x = Xorigin + 1; x < Xorigin + Length; ++x)
+            {
+                _map[Yorigin + 1, x] = new Wall(Wall.Type.Horizontal);
+                _map[Yorigin - 1, x] = new Wall(Wall.Type.Horizontal);
+            }
+            if (HasDoors)
+            {
+                _map[Yorigin + 1, Xorigin] = new Wall(Wall.Type.InterRight);
+                _map[Yorigin - 1, Xorigin] = new Wall(Wall.Type.InterRight);
+                _map[Yorigin, Xorigin] = new Door(Door.Type.Vertical, false);
+                _map[Yorigin + 1, Xorigin + Length - 1] = new Wall(Wall.Type.InterLeft);
+                _map[Yorigin - 1, Xorigin + Length - 1] = new Wall(Wall.Type.InterLeft);
+                _map[Yorigin, Xorigin + Length - 1] = new Door(Door.Type.Vertical, false);
+            }
+            else
+            {
+                _map[Yorigin + 1, Xorigin] = new Wall(Wall.Type.TopLeft);
+                _map[Yorigin - 1, Xorigin] = new Wall(Wall.Type.BotLeft);
+                _map[Yorigin, Xorigin] = Tile.Empty();
+                _map[Yorigin + 1, Xorigin + Length - 1] = new Wall(Wall.Type.TopRight);
+                _map[Yorigin - 1, Xorigin + Length - 1] = new Wall(Wall.Type.BotRight);
+                _map[Yorigin, Xorigin + Length - 1] = Tile.Empty();
+            }
+        }
+
+        private void GenerateVerticalHallway(int Xorigin, int Yorigin, int Length, bool HasDoors)
+        {
+            for (int y = Yorigin + 1; y < Yorigin + Length; ++y)
+            {
+               _map[y, Xorigin + 1] = new Wall(Wall.Type.Vertical);
+               _map[y, Xorigin - 1] = new Wall(Wall.Type.Vertical);
+            }
+            if (HasDoors)
+            {
+               _map[Yorigin, Xorigin + 1] = new Wall(Wall.Type.InterBot);
+               _map[Yorigin, Xorigin - 1] = new Wall(Wall.Type.InterBot);
+               _map[Yorigin, Xorigin] = new Door(Door.Type.Horizontal, false);
+               _map[Yorigin + Length - 1, Xorigin + 1] = new Wall(Wall.Type.InterTop);
+               _map[Yorigin + Length - 1, Xorigin - 1] = new Wall(Wall.Type.InterTop);
+               _map[Yorigin + Length - 1, Xorigin] = new Door(Door.Type.Horizontal, false);
+            }
+            else
+            {
+               _map[Yorigin, Xorigin + 1] = new Wall(Wall.Type.TopLeft);
+               _map[Yorigin, Xorigin - 1] = new Wall(Wall.Type.TopRight);
+               _map[Yorigin, Xorigin] = Tile.Empty();
+               _map[Yorigin + Length - 1, Xorigin + 1] = new Wall(Wall.Type.BotLeft);
+               _map[Yorigin + Length - 1, Xorigin - 1] = new Wall(Wall.Type.BotRight);
+               _map[Yorigin + Length - 1, Xorigin] = Tile.Empty();
+            }
+        }
+
+        #endregion
 
         #region Fields
 

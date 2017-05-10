@@ -34,6 +34,7 @@ namespace SolitaryDungeon
         public static void Log(string LogString)
         {
             _events.Enqueue(LogString);
+            UpdateLog();
         }
 
         private static void DrawBorder()
