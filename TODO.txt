@@ -1,4 +1,5 @@
-﻿1. Add corridor generators
+1. Add corridor generators
+2. Fix camera generation bug where width end height are reversed 
 2. Fix carpeala
  - add proper Health and TakeDamage
  - add proper Character proximity check
