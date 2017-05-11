@@ -1,10 +1,11 @@
 1. Add corridor generators
-2. Fix camera generation bug where width end height are reversed 
-2. Fix carpeala
+2. Fix room generation bug where width end height are reversed
+3. Fix bug where enemies don't render on first frame
+4. Fix carpeala
  - add proper Health and TakeDamage
  - add proper Character proximity check
-3. Eventualy move all spirte enum to their own file
-4. Add music with beeps
+5. Eventualy move all spirte enum to their own file
+6. Add music with beeps
 OPTIONAL: Add Inner and Outer mode for room generation
 
 PLANNED FEATURES:
