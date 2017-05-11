@@ -9,9 +9,11 @@ namespace SolitaryDungeon
             _width = Width;
             _height = Height;
             InitializeMap();
-            GenerateRoom(0, 0, Width, Height);
-            GenerateHorizontalHallway(5, 5, 5, true);
-            GenerateVerticalHallway(5, 7, 5, true);
+            GenerateRoom(2, 0, 14, 9);
+            GenerateRoom(22, 1, 18, 6);
+            GenerateRoom(1, 12, 18, 6);
+            GenerateHorizontalHallway(15, 3, 8, false);
+            GenerateVerticalHallway(6, 8, 5, true);
             _characters = new List<Character>();
         }
 
@@ -76,12 +78,13 @@ namespace SolitaryDungeon
             _map[Yposition, Xposition + Width - 1] = new Wall(Wall.Type.TopRight);
             _map[Yposition + Height - 1, Xposition] = new Wall(Wall.Type.BotLeft);
             _map[Yposition + Height - 1, Xposition + Width - 1] = new Wall(Wall.Type.BotRight);
-            for (int i = Yposition + 1; i < Yposition + Width - 1; ++i)
+            
+            for (int i = Yposition + 1; i < Yposition + Height - 1; ++i)
             {
                 _map[i, Xposition] = new Wall(Wall.Type.Vertical);
                 _map[i, Xposition + Width - 1] = new Wall(Wall.Type.Vertical);
             }
-            for (int j = Xposition + 1; j < Xposition + Height - 1; ++j)
+            for (int j = Xposition + 1; j < Xposition + Width - 1; ++j)
             {
                 _map[Yposition, j] = new Wall(Wall.Type.Horizontal);
                 _map[Yposition + Height - 1, j] = new Wall(Wall.Type.Horizontal);

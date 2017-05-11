@@ -30,7 +30,7 @@ namespace SolitaryDungeon
         public static void ShowWin()
         {
             Game.IsPaused = true;
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
             Console.Clear();
             DrawMenu();
             DrawWin();
@@ -40,7 +40,7 @@ namespace SolitaryDungeon
         public static void ShowGameOver()
         {
             Game.IsPaused = true;
-            Thread.Sleep(2000);
+            Thread.Sleep(1000);
             Console.Clear();
             DrawMenu();
             DrawGameOver();

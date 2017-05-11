@@ -11,7 +11,7 @@ namespace SolitaryDungeon
         public Player(Level Level, int Xposition, int Yposition) : base(Level, Xposition, Yposition, ConsoleColor.White)
         {
             Sprite = '☻';
-            Menu.ShowIntro();
+            //Menu.ShowIntro();
             Camera.Render();
             InGameMenu.Update();
         }
@@ -75,7 +75,12 @@ namespace SolitaryDungeon
                                 if(((Zombie)z).Health > 0)
                                     InGameMenu.Log("Hit a zombie for 5 dmg");
                                 else if (((Zombie)z).Health == 0)
+                                {
                                     InGameMenu.Log("Killed a zombie");
+                                    _health += 3;
+                                    if (_health > 18)
+                                        _health = 18;
+                                }
                             }
                         if (Level.Characters.Count == 1)
                         {
