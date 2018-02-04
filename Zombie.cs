@@ -38,6 +38,8 @@ namespace SolitaryDungeon
                 int damage = new Random().Next(2, 5);
                 p.TakeDamage(damage);
                 InGameMenu.Log("Took " + damage + " dmg from a zombie");
+                if (p.Health <= 0)
+                    InGameMenu.Log("Died");
             }
             else
                 Move(Pathfinding.NextStep(Xpos, Ypos, p.Xpos, p.Ypos));

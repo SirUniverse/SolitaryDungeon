@@ -30,7 +30,10 @@ namespace SolitaryDungeon
         {
             _health -= DamageValue;
             if (_health <= 0)
+            {
                 Game.IsAlive = false;
+                Game.IsWon = false;
+            }
         }
 
         protected override void ExecuteBehaviour()
@@ -72,8 +75,19 @@ namespace SolitaryDungeon
                                 if(((Zombie)z).Health > 0)
                                     InGameMenu.Log("Hit a zombie for 5 dmg");
                                 else if (((Zombie)z).Health == 0)
+                                {
                                     InGameMenu.Log("Killed a zombie");
+                                    _health += 3;
+                                    if (_health > 18)
+                                        _health = 18;
+                                }
                             }
+                        if (Level.Characters.Count == 1)
+                        {
+                            InGameMenu.Log("Killed all zombies");
+                            Game.IsAlive = false;
+                            Game.IsWon = true;
+                        }
                         goto default;
                     default:
                         Level.Update();

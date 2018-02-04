@@ -13,14 +13,14 @@
   <Class Name="SolitaryDungeon.Player">
     <Position X="2.25" Y="0.5" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAACABAAAEAAgAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>Player.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SolitaryDungeon.Level">
     <Position X="8.5" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAQAEAAABBAAABQAQAAAAEAAIAABAACAAQAAAQIAAAA=</HashCode>
+      <HashCode>AQYAAAAABBCAABAAAAAAAEAAIBAAAACAAUAACQIAAAA=</HashCode>
       <FileName>Level.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -37,11 +37,11 @@
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Struct Name="SolitaryDungeon.Wall.Sprites" Collapsed="true">
+      <Enum Name="SolitaryDungeon.Wall.Type" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>Wall.cs</NewMemberFileName>
         </TypeIdentifier>
-      </Struct>
+      </Enum>
     </NestedTypes>
     <TypeIdentifier>
       <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
@@ -51,7 +51,7 @@
   <Class Name="SolitaryDungeon.Game">
     <Position X="12" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAQAAAAAAAAAAAAAAAAAACAAAAAAAAAA=</HashCode>
+      <HashCode>AQAABCIAAAAAAQAAAAAAAAAAAAAEAAAAEAAgAAgAAAA=</HashCode>
       <FileName>Game.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -72,7 +72,7 @@
   <Class Name="SolitaryDungeon.InGameMenu">
     <Position X="10.25" Y="2" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AEQAAAAAJACAAAAAAAAAAEAAABgAAAAACAAAAAAAAAA=</HashCode>
+      <HashCode>AERAAAAAJACAAAAAAAAAAEAAABgAAAAACAAAAAAAAAA=</HashCode>
       <FileName>InGameMenu.cs</FileName>
     </TypeIdentifier>
   </Class>
@@ -82,28 +82,28 @@
       <Compartment Name="Nested Types" Collapsed="false" />
     </Compartments>
     <NestedTypes>
-      <Struct Name="SolitaryDungeon.Door.Sprites" Collapsed="true">
+      <Enum Name="SolitaryDungeon.Door.Type" Collapsed="true">
         <TypeIdentifier>
           <NewMemberFileName>Door.cs</NewMemberFileName>
         </TypeIdentifier>
-      </Struct>
+      </Enum>
     </NestedTypes>
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAEAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAgAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
       <FileName>Door.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SolitaryDungeon.Pathfinding">
     <Position X="10.25" Y="0.5" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <HashCode>AAAAAAACAAAAAAAAAAAAAAAAAAAEAAAAEAAAAAAAAAA=</HashCode>
       <FileName>Pathfinding.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Class Name="SolitaryDungeon.Zombie">
-    <Position X="2.25" Y="2" Width="1.75" />
+    <Position X="2.25" Y="3.25" Width="1.75" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <HashCode>AAAACAAAAAEAAgAAAAAAAAAAAAAAAAAAAAAAgAAAAAA=</HashCode>
       <FileName>Zombie.cs</FileName>
     </TypeIdentifier>
   </Class>

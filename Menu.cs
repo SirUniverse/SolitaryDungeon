@@ -27,9 +27,20 @@ namespace SolitaryDungeon
             Game.IsPaused = false;
         }
 
+        public static void ShowWin()
+        {
+            Game.IsPaused = true;
+            Thread.Sleep(1000);
+            Console.Clear();
+            DrawMenu();
+            DrawWin();
+            Console.ReadKey(true);
+        }
+
         public static void ShowGameOver()
         {
             Game.IsPaused = true;
+            Thread.Sleep(1000);
             Console.Clear();
             DrawMenu();
             DrawGameOver();
@@ -124,6 +135,30 @@ namespace SolitaryDungeon
             Console.Write(@" | |__| | (_| | | | | | |  __/ | |__| |\ V /  __/ |    |_|");
             Console.SetCursorPosition(20, ++row);
             Console.Write(@"  \_____|\__,_|_| |_| |_|\___|  \____/  \_/ \___|_|    (_)");
+            Console.SetCursorPosition(39, row + 5);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("Press any key to exit");
+        }
+
+        public static void DrawWin()
+        {
+            Console.ForegroundColor = ConsoleColor.DarkGreen;
+            int row = 11;
+            Console.SetCursorPosition(20, ++row);
+            Console.Write(@"        __     __          __          __");
+            Console.SetCursorPosition(20, ++row);
+            Console.Write(@"        \ \   / /          \ \        / /");
+            Console.SetCursorPosition(20, ++row);
+            Console.Write(@"         \ \_/ /__  _   _   \ \  /\  / /__  _ __");
+            Console.SetCursorPosition(20, ++row);
+            Console.Write(@"          \   / _ \| | | |   \ \/  \/ / _ \| '_ \");
+            Console.SetCursorPosition(20, ++row);
+            Console.Write(@"           | | (_) | |_| |    \  /\  / (_) | | | |");
+            Console.SetCursorPosition(20, ++row);
+            Console.Write(@"           |_|\___/ \__,_|     \/  \/ \___/|_| |_|");
+            Console.SetCursorPosition(39, row + 5);
+            Console.ForegroundColor = ConsoleColor.White;
+            Console.Write("Press any key to exit");
         }
     }
 }
